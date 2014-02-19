@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			div {
+				background-color: blue;
+				height: 50px;
+				width: 50px;
+				border-radius: 50%;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="logintest.html"> Login test</a></li>
+				<li><a href="home.html"> Element generation test</a></li>
+				<li><a href="objecttest.html"> Object test</a></li>
+				<li><a href="objEnvironment.html"> Object Environment testing</a></li>
+			</ul>
+		</nav>
+		<p> Home</p>
+		<form>
+		<button>Add </button>
+		</form>
+		<script type="text/javascript" src="jquery.js"> </script>
+		<script type="text/javascript">
+
+		function rand(newDiv) {
+				var randHeight = (Math.random() * ($(window).height() - newDiv.clientHeight));
+  				var randWidth = (Math.random() * ($(window).width() - newDiv.clientWidth));
+    
+             	newDiv.style.position = "absolute";
+             	newDiv.style.top = randHeight + "px"; 
+             	newDiv.style.left = randWidth  + "px";
+
+             	return false;
+		}
+
+			function add() {
+				var newDiv = document.createElement('div');
+
+				document.body.appendChild(newDiv);
+				rand(newDiv);
+
+				return false;
+
+			}
+
+
+			$("button").click(function(){
+				add();
+				return false;
+			});
+
+
+		</script>
+	</body>
+</html>
